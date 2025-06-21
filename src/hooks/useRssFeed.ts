@@ -81,8 +81,6 @@ export const useRssFeed = (rssUrl: string) => {
   return useQuery({
     queryKey: ['rss-feed', rssUrl],
     queryFn: async () => {
-      console.log('Attempting to fetch RSS feed...');
-      
       // Lista de proxy-uri CORS să încercăm
       const proxies = [
         'https://api.allorigins.win/raw?url=',
@@ -94,7 +92,6 @@ export const useRssFeed = (rssUrl: string) => {
       
       for (const proxy of proxies) {
         try {
-          console.log(`Trying proxy: ${proxy}`);
           const proxyUrl = `${proxy}${encodeURIComponent(rssUrl)}`;
           const response = await fetchWithTimeout(proxyUrl, 8000);
           
@@ -103,24 +100,17 @@ export const useRssFeed = (rssUrl: string) => {
           }
           
           const xmlText = await response.text();
-          console.log('RSS feed fetched successfully');
-          console.log('XML length:', xmlText.length);
-          
           const articles = parseRssFeed(xmlText);
-          console.log('Parsed articles:', articles.length);
           
           return articles;
         } catch (error) {
-          console.error(`Proxy ${proxy} failed:`, error);
           lastError = error;
-          // Continuă cu următorul proxy
           continue;
         }
       }
       
-      // Dacă toate proxy-urile au eșuat, încearcă direct (poate merge în unele cazuri)
+      // Dacă toate proxy-urile au eșuat, încearcă direct
       try {
-        console.log('Trying direct fetch...');
         const response = await fetchWithTimeout(rssUrl, 5000);
         
         if (!response.ok) {
@@ -130,13 +120,14 @@ export const useRssFeed = (rssUrl: string) => {
         const xmlText = await response.text();
         return parseRssFeed(xmlText);
       } catch (error) {
-        console.error('Direct fetch failed:', error);
-        throw new Error(`Failed to fetch RSS feed after trying all methods. Last error: ${lastError?.message || 'Unknown error'}`);
+        throw new Error(`Failed to fetch RSS feed: ${lastError?.message || 'Unknown error'}`);
       }
     },
-    staleTime: 5 * 60 * 1000, // 5 minutes
-    gcTime: 10 * 60 * 1000, // 10 minutes
-    retry: 2, // Reîncearcă de 2 ori
-    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000), // Exponential backoff
+    staleTime: 15 * 60 * 1000, // 15 minutes - cache mai lung
+    gcTime: 30 * 60 * 1000, // 30 minutes
+    retry: 1, // Reducem retry-urile
+    retryDelay: 2000, // Delay fix mai mic
+    refetchOnWindowFocus: false, // Nu refetch la focus
+    refetchOnMount: false, // Nu refetch la mount dacă avem cache
   });
 };

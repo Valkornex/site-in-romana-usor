@@ -4,16 +4,17 @@ import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useRssFeed } from "@/hooks/useRssFeed";
+import { useMemo } from "react";
 
 const BlogSection = () => {
   const { data: blogArticles = [], isLoading, error } = useRssFeed("https://www.zf.ro/rss/");
 
-  // Afișează doar primele 6 articole pentru secțiunea de pe homepage
-  const displayArticles = blogArticles.slice(0, 6);
+  // Memoizăm articolele afișate pentru a evita recalcularea
+  const displayArticles = useMemo(() => blogArticles.slice(0, 6), [blogArticles]);
 
   if (isLoading) {
     return (
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50" aria-label="Se încarcă articolele din blog">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -23,8 +24,8 @@ const BlogSection = () => {
               Rămâi la curent cu cele mai noi știri și tendințe
             </p>
           </div>
-          <div className="flex items-center justify-center">
-            <Loader2 className="h-8 w-8 animate-spin mr-2" />
+          <div className="flex items-center justify-center" role="status" aria-live="polite">
+            <Loader2 className="h-8 w-8 animate-spin mr-2" aria-hidden="true" />
             <span className="text-lg">Se încarcă articolele...</span>
           </div>
         </div>
@@ -34,7 +35,7 @@ const BlogSection = () => {
 
   if (error || displayArticles.length === 0) {
     return (
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50" aria-label="Eroare la încărcarea articolelor">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -59,7 +60,7 @@ const BlogSection = () => {
   }
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50" aria-label="Ultimele articole din blog">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -73,7 +74,12 @@ const BlogSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {displayArticles.map((article) => (
             <Card key={article.id} className="group hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-2">
-              <a href={article.link} target="_blank" rel="noopener noreferrer">
+              <a 
+                href={article.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label={`Citește articolul: ${article.title}`}
+              >
                 <div className="relative p-4">
                   <div className="mb-4">
                     <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -87,11 +93,11 @@ const BlogSection = () => {
                   </CardTitle>
                   <div className="flex items-center space-x-4 text-sm text-gray-500">
                     <div className="flex items-center space-x-1">
-                      <User className="h-4 w-4" />
+                      <User className="h-4 w-4" aria-hidden="true" />
                       <span>{article.author}</span>
                     </div>
                     <div className="flex items-center space-x-1">
-                      <Calendar className="h-4 w-4" />
+                      <Calendar className="h-4 w-4" aria-hidden="true" />
                       <span>{article.date}</span>
                     </div>
                   </div>
