@@ -2,6 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const BlogSection = () => {
   // Sample blog articles - you can replace this with real data later
@@ -77,51 +78,55 @@ const BlogSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {blogArticles.map((article) => (
             <Card key={article.id} className="group hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-2">
-              <div className="relative overflow-hidden rounded-t-lg">
-                <img 
-                  src={article.image} 
-                  alt={article.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {article.category}
-                  </span>
-                </div>
-              </div>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-200 line-clamp-2">
-                  {article.title}
-                </CardTitle>
-                <div className="flex items-center space-x-4 text-sm text-gray-500">
-                  <div className="flex items-center space-x-1">
-                    <User className="h-4 w-4" />
-                    <span>{article.author}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Calendar className="h-4 w-4" />
-                    <span>{article.date}</span>
+              <Link to={`/blog/${article.id}`}>
+                <div className="relative overflow-hidden rounded-t-lg">
+                  <img 
+                    src={article.image} 
+                    alt={article.title}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {article.category}
+                    </span>
                   </div>
                 </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-600 mb-4 line-clamp-3">
-                  {article.excerpt}
-                </CardDescription>
-                <Button variant="ghost" className="group/btn text-blue-600 hover:text-blue-800 p-0 h-auto">
-                  Citește mai mult
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                </Button>
-              </CardContent>
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-200 line-clamp-2">
+                    {article.title}
+                  </CardTitle>
+                  <div className="flex items-center space-x-4 text-sm text-gray-500">
+                    <div className="flex items-center space-x-1">
+                      <User className="h-4 w-4" />
+                      <span>{article.author}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Calendar className="h-4 w-4" />
+                      <span>{article.date}</span>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-600 mb-4 line-clamp-3">
+                    {article.excerpt}
+                  </CardDescription>
+                  <Button variant="ghost" className="group/btn text-blue-600 hover:text-blue-800 p-0 h-auto">
+                    Citește mai mult
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                  </Button>
+                </CardContent>
+              </Link>
             </Card>
           ))}
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
-            Vezi Toate Articolele
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <Link to="/blog">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
+              Vezi Toate Articolele
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
