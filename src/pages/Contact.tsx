@@ -1,13 +1,14 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 const Contact = () => {
   const contactInfo = [
     {
       icon: Mail,
       title: "Email",
-      content: "contact@advicelink.ro",
+      content: "noreply@advicelink.ro",
       description: "Trimite-ne un email și îți vom răspunde în cel mai scurt timp"
     },
     {
@@ -38,7 +39,7 @@ const Contact = () => {
             Contactează-ne
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Suntem aici să te ajutăm cu orice întrebări sau nevoie de consultanță. Contactează-ne pentru o discuție inițială gratuită.
+            Suntem aici să te ajutăm cu orice întrebări sau nevoi de consultanță. Contactează-ne pentru o discuție inițială gratuită.
           </p>
         </div>
 
@@ -65,28 +66,12 @@ const Contact = () => {
           ))}
         </div>
 
-        {/* Formularul de contact extins pe întreaga secțiune */}
-        <div className="bg-gray-50 rounded-xl p-8 mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-            Formular de Contact
-          </h2>
-          <div className="bg-gradient-to-br from-blue-600 to-red-600 rounded-lg p-12 text-center text-white">
-            <h3 className="text-3xl font-bold mb-6">
-              Contact Form 7
-            </h3>
-            <p className="text-xl mb-6">
-              Aici va fi implementat Contact Form 7 conform cerințelor tale.
-            </p>
-            <p className="text-lg opacity-90 mb-8">
-              Formularul va include câmpuri pentru nume, email, telefon, subiect și mesaj, 
-              cu validare automată și trimitere prin email.
-            </p>
-            <div className="max-w-2xl mx-auto">
-              <p className="text-base opacity-80">
-                Formularul va fi complet responsiv și va oferi o experiență optimă pe toate dispozitivele.
-              </p>
-            </div>
-          </div>
+        {/* Formularul de contact funcțional */}
+        <div className="mb-16">
+          <ContactForm 
+            title="Formular de Contact"
+            description="Completează formularul de mai jos pentru a ne contacta direct. Îți vom răspunde în cel mai scurt timp."
+          />
         </div>
 
         {/* CTA Section */}
@@ -97,9 +82,12 @@ const Contact = () => {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Hai să discutăm despre proiectul tău și să vedem cum te putem ajuta să îți atingi obiectivele.
           </p>
-          <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg text-lg transition-colors duration-200">
+          <a 
+            href="mailto:noreply@advicelink.ro" 
+            className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg text-lg transition-colors duration-200 inline-block"
+          >
             Programează o Consultație Gratuită
-          </button>
+          </a>
         </div>
       </div>
     </div>
