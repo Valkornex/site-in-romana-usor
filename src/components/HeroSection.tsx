@@ -23,7 +23,7 @@ const HeroSection = () => {
           {/* Left Column - Main Content */}
           <div className="lg:col-span-1 space-y-8 z-10">
             <div className="space-y-6">
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-white animate-fade-in">
+              <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-white animate-fade-in">
                 Innovation for
                 <br />
                 <span className="text-green-400">Positive</span>
@@ -50,8 +50,8 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Right Column - Cards Grid */}
-          <div className="lg:col-span-1 relative">
+          {/* Right Column - Cards Grid with Circular Animation */}
+          <div className="lg:col-span-1 relative animate-[spin_20s_linear_infinite]">
             
             {/* Card 1 - Top Left */}
             <Card className="absolute top-0 left-0 w-80 h-48 bg-gradient-to-br from-blue-500 to-purple-600 border-none text-white overflow-hidden transform hover:scale-105 transition-all duration-300 animate-fade-in hover:shadow-2xl">
