@@ -13,12 +13,12 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
+    <section className="relative h-[700px] bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
       {/* Background overlay */}
       <div className="absolute inset-0 bg-black/20"></div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-10rem)]">
+        <div className="grid lg:grid-cols-2 gap-8 items-center h-[calc(700px-10rem)]">
           
           {/* Left Column - Main Content */}
           <div className="lg:col-span-1 space-y-8 z-10">
