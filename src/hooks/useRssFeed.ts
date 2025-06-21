@@ -28,10 +28,6 @@ const parseRssFeed = (xmlText: string): RssArticle[] => {
     const pubDate = item.querySelector('pubDate')?.textContent || '';
     const category = item.querySelector('category')?.textContent || 'Știri';
     
-    // Extract image from description if available
-    const imgMatch = description.match(/<img[^>]+src="([^">]+)"/);
-    const image = imgMatch ? imgMatch[1] : `https://images.unsplash.com/photo-${1500000000000 + index}?w=400&h=250&fit=crop`;
-    
     // Clean description from HTML tags
     const cleanDescription = description.replace(/<[^>]*>/g, '').substring(0, 150) + '...';
     
@@ -56,7 +52,6 @@ const parseRssFeed = (xmlText: string): RssArticle[] => {
       author: 'ZF.ro',
       date: formattedDate,
       dateSort: dateObj,
-      image,
       category,
       readTime
     };
@@ -84,6 +79,6 @@ export const useRssFeed = (rssUrl: string) => {
       }
     },
     staleTime: 5 * 60 * 1000, // 5 minutes
-    cacheTime: 10 * 60 * 1000, // 10 minutes
+    gcTime: 10 * 60 * 1000, // 10 minutes
   });
 };

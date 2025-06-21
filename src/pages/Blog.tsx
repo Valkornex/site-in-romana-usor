@@ -190,23 +190,12 @@ const Blog = () => {
             {filteredAndSortedArticles.map((article) => (
               <Card key={article.id} className="group hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-2 bg-white">
                 <a href={article.link} target="_blank" rel="noopener noreferrer">
-                  <div className="relative overflow-hidden rounded-t-lg">
-                    <img 
-                      src={article.image} 
-                      alt={article.title}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = `https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=250&fit=crop`;
-                      }}
-                    />
-                    <div className="absolute top-4 left-4">
+                  <div className="relative p-4">
+                    <div className="flex justify-between items-start mb-4">
                       <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                         {article.category}
                       </span>
-                    </div>
-                    <div className="absolute top-4 right-4">
-                      <span className="bg-black/50 text-white px-2 py-1 rounded text-sm">
+                      <span className="bg-gray-200 text-gray-700 px-2 py-1 rounded text-sm">
                         {article.readTime}
                       </span>
                     </div>

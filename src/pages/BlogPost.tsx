@@ -43,7 +43,6 @@ const BlogPost = () => {
       excerpt: "Descoperă cele mai eficiente strategii pentru a-ți dezvolta afacerea în 2024. Ghid complet cu sfaturi practice și exemple concrete din industrie.",
       author: "Expert Advice Link",
       date: "15 Ianuarie 2024",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=400&fit=crop",
       category: "Business",
       readTime: "5 min"
     },
@@ -62,7 +61,6 @@ const BlogPost = () => {
       excerpt: "Cum să te adaptezi la era digitală și să folosești tehnologia pentru a-ți îmbunătăți serviciile de consultanță. Tendințe și instrumente esențiale.",
       author: "Expert Advice Link",
       date: "12 Ianuarie 2024",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop",
       category: "Digital",
       readTime: "7 min"
     },
@@ -78,7 +76,6 @@ const BlogPost = () => {
       excerpt: "Principiile fundamentale ale unui leadership eficient și cum să îți motivezi echipa pentru rezultate excepționale. Case studies și practici demonstrate.",
       author: "Expert Advice Link",
       date: "10 Ianuarie 2024",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=400&fit=crop",
       category: "Leadership",
       readTime: "6 min"
     }
@@ -158,15 +155,6 @@ const BlogPost = () => {
           </div>
         </header>
 
-        {/* Imagine principală */}
-        <div className="mb-8">
-          <img 
-            src={article.image} 
-            alt={article.title}
-            className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
-          />
-        </div>
-
         {/* Conținutul articolului */}
         <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
           <div 
@@ -190,20 +178,13 @@ const BlogPost = () => {
                   <Link 
                     key={similarArticle.id}
                     to={`/blog/${similarArticle.id}`}
-                    className="group block"
+                    className="group block p-4 rounded-lg border hover:shadow-md transition-shadow duration-200"
                   >
-                    <div className="flex gap-4">
-                      <img 
-                        src={similarArticle.image} 
-                        alt={similarArticle.title}
-                        className="w-20 h-20 object-cover rounded-lg group-hover:scale-105 transition-transform duration-200"
-                      />
-                      <div>
-                        <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-200 line-clamp-2 mb-2">
-                          {similarArticle.title}
-                        </h4>
-                        <p className="text-sm text-gray-600">{similarArticle.date}</p>
-                      </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-200 line-clamp-2 mb-2">
+                        {similarArticle.title}
+                      </h4>
+                      <p className="text-sm text-gray-600">{similarArticle.date}</p>
                     </div>
                   </Link>
                 ))}
