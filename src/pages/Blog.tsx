@@ -2,86 +2,24 @@
 import { useState, useMemo } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, User, ArrowRight, Search } from "lucide-react";
+import { Calendar, User, ArrowRight, Search, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Link } from "react-router-dom";
+import { useRssFeed } from "@/hooks/useRssFeed";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Toate");
   const [sortBy, setSortBy] = useState("date-desc");
 
-  const blogArticles = [
-    {
-      id: 1,
-      title: "Strategii de Succes în Business",
-      excerpt: "Descoperă cele mai eficiente strategii pentru a-ți dezvolta afacerea în 2024. Ghid complet cu sfaturi practice și exemple concrete din industrie.",
-      author: "Expert Advice Link",
-      date: "15 Ianuarie 2024",
-      dateSort: new Date("2024-01-15"),
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=250&fit=crop",
-      category: "Business",
-      readTime: "5 min"
-    },
-    {
-      id: 2,
-      title: "Consultanța Digitală Modernă",
-      excerpt: "Cum să te adaptezi la era digitală și să folosești tehnologia pentru a-ți îmbunătăți serviciile de consultanță. Tendințe și instrumente esențiale.",
-      author: "Expert Advice Link",
-      date: "12 Ianuarie 2024",
-      dateSort: new Date("2024-01-12"),
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop",
-      category: "Digital",
-      readTime: "7 min"
-    },
-    {
-      id: 3,
-      title: "Leadership și Management",
-      excerpt: "Principiile fundamentale ale unui leadership eficient și cum să îți motivezi echipa pentru rezultate excepționale. Case studies și practici demonstrate.",
-      author: "Expert Advice Link",
-      date: "10 Ianuarie 2024",
-      dateSort: new Date("2024-01-10"),
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=250&fit=crop",
-      category: "Leadership",
-      readTime: "6 min"
-    },
-    {
-      id: 4,
-      title: "Inovația în Consultanță",
-      excerpt: "Metodele inovatoare de consultanță care transformă industriile și creează valoare pentru clienți. Perspective asupra viitorului consultanței.",
-      author: "Expert Advice Link",
-      date: "8 Ianuarie 2024",
-      dateSort: new Date("2024-01-08"),
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=250&fit=crop",
-      category: "Inovație",
-      readTime: "8 min"
-    },
-    {
-      id: 5,
-      title: "Comunicarea Eficientă",
-      excerpt: "Tehnici avansate de comunicare pentru consultanți și lideri de business. Cum să transmiți mesaje clare și persuasive în orice context.",
-      author: "Expert Advice Link",
-      date: "5 Ianuarie 2024",
-      dateSort: new Date("2024-01-05"),
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=250&fit=crop",
-      category: "Comunicare",
-      readTime: "4 min"
-    },
-    {
-      id: 6,
-      title: "Dezvoltarea Profesională",
-      excerpt: "Pașii esențiali pentru dezvoltarea carierei în consultanță și cum să îți construiești o reputație solidă în domeniu. Ghid pas cu pas.",
-      author: "Expert Advice Link",
-      date: "3 Ianuarie 2024",
-      dateSort: new Date("2024-01-03"),
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=250&fit=crop",
-      category: "Carieră",
-      readTime: "6 min"
-    }
-  ];
+  const { data: blogArticles = [], isLoading, error } = useRssFeed("https://www.zf.ro/rss/");
 
-  const categories = ["Toate", "Business", "Digital", "Leadership", "Inovație", "Comunicare", "Carieră"];
+  const categories = useMemo(() => {
+    if (!blogArticles.length) return ["Toate"];
+    const uniqueCategories = Array.from(new Set(blogArticles.map(article => article.category)));
+    return ["Toate", ...uniqueCategories];
+  }, [blogArticles]);
 
   const filteredAndSortedArticles = useMemo(() => {
     let filtered = blogArticles;
@@ -121,13 +59,42 @@ const Blog = () => {
     });
 
     return filtered;
-  }, [searchTerm, selectedCategory, sortBy]);
+  }, [blogArticles, searchTerm, selectedCategory, sortBy]);
 
   const resetFilters = () => {
     setSearchTerm("");
     setSelectedCategory("Toate");
     setSortBy("date-desc");
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center">
+            <Loader2 className="h-8 w-8 animate-spin mr-2" />
+            <span className="text-lg">Se încarcă articolele...</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gray-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-red-600 mb-4">Eroare la încărcarea articolelor</h1>
+            <p className="text-gray-600 mb-4">Nu am putut încărca articolele de pe RSS feed.</p>
+            <Button onClick={() => window.location.reload()} className="bg-blue-600 hover:bg-blue-700">
+              Încearcă din nou
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 py-16">
@@ -137,7 +104,7 @@ const Blog = () => {
             Blog Advice Link
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Articole expertizate despre business, consultanță și dezvoltare profesională
+            Articole și știri de actualitate de pe ZF.ro
           </p>
           
           {/* Căutare și filtre */}
@@ -222,12 +189,16 @@ const Blog = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredAndSortedArticles.map((article) => (
               <Card key={article.id} className="group hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-2 bg-white">
-                <Link to={`/blog/${article.id}`}>
+                <a href={article.link} target="_blank" rel="noopener noreferrer">
                   <div className="relative overflow-hidden rounded-t-lg">
                     <img 
                       src={article.image} 
                       alt={article.title}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = `https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=250&fit=crop`;
+                      }}
                     />
                     <div className="absolute top-4 left-4">
                       <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -260,11 +231,11 @@ const Blog = () => {
                       {article.excerpt}
                     </CardDescription>
                     <Button variant="ghost" className="group/btn text-blue-600 hover:text-blue-800 p-0 h-auto">
-                      Citește articolul complet
+                      Citește pe ZF.ro
                       <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                     </Button>
                   </CardContent>
-                </Link>
+                </a>
               </Card>
             ))}
           </div>
