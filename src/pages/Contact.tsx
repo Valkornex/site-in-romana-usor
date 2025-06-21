@@ -65,43 +65,32 @@ const Contact = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form Placeholder */}
-          <div className="bg-gray-50 rounded-xl p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Formular de Contact
-            </h2>
-            <div className="bg-gradient-to-br from-blue-600 to-red-600 rounded-lg p-8 text-center text-white">
-              <h3 className="text-2xl font-bold mb-4">
-                Contact Form 7
-              </h3>
-              <p className="text-lg mb-4">
-                Aici va fi implementat Contact Form 7 conform cerințelor tale.
+        {/* Formularul de contact extins pe întreaga secțiune */}
+        <div className="bg-gray-50 rounded-xl p-8 mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+            Formular de Contact
+          </h2>
+          <div className="bg-gradient-to-br from-blue-600 to-red-600 rounded-lg p-12 text-center text-white">
+            <h3 className="text-3xl font-bold mb-6">
+              Contact Form 7
+            </h3>
+            <p className="text-xl mb-6">
+              Aici va fi implementat Contact Form 7 conform cerințelor tale.
+            </p>
+            <p className="text-lg opacity-90 mb-8">
+              Formularul va include câmpuri pentru nume, email, telefon, subiect și mesaj, 
+              cu validare automată și trimitere prin email.
+            </p>
+            <div className="max-w-2xl mx-auto">
+              <p className="text-base opacity-80">
+                Formularul va fi complet responsiv și va oferi o experiență optimă pe toate dispozitivele.
               </p>
-              <p className="text-sm opacity-90">
-                Formularul va include câmpuri pentru nume, email, telefon, subiect și mesaj, 
-                cu validare automată și trimitere prin email.
-              </p>
-            </div>
-          </div>
-
-          {/* Map Placeholder */}
-          <div className="bg-gray-50 rounded-xl p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Locația Noastră
-            </h2>
-            <div className="bg-gray-200 rounded-lg h-80 flex items-center justify-center">
-              <div className="text-center text-gray-600">
-                <MapPin className="h-16 w-16 mx-auto mb-4" />
-                <p className="text-lg font-semibold">Hartă Google Maps</p>
-                <p>Aici va fi integrată harta cu locația exactă</p>
-              </div>
             </div>
           </div>
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-br from-blue-600 to-red-600 rounded-xl p-8 md:p-12 text-center text-white mt-16">
+        <div className="bg-gradient-to-br from-blue-600 to-red-600 rounded-xl p-8 md:p-12 text-center text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Gata să începem colaborarea?
           </h2>
