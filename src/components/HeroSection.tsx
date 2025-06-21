@@ -23,7 +23,7 @@ const HeroSection = () => {
           {/* Left Column - Main Content */}
           <div className="lg:col-span-1 space-y-8 z-10">
             <div className="space-y-6">
-              <h1 className="text-6xl lg:text-8xl font-bold leading-tight text-white">
+              <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-white animate-fade-in">
                 Innovation for
                 <br />
                 <span className="text-green-400">Positive</span>
@@ -31,13 +31,13 @@ const HeroSection = () => {
                 Change
               </h1>
               
-              <p className="text-lg text-gray-300 leading-relaxed max-w-md uppercase tracking-wide">
+              <p className="text-lg text-gray-300 leading-relaxed max-w-md uppercase tracking-wide animate-fade-in">
                 INNOVATION THAT DELIVERS RESULTS
               </p>
             </div>
             
             {/* Signature */}
-            <div className="mt-12">
+            <div className="mt-12 animate-fade-in">
               <div className="w-64 h-16 opacity-60">
                 <svg viewBox="0 0 200 50" className="w-full h-full text-white">
                   <path d="M10 30 Q 30 10, 50 30 T 90 30 M 100 20 L 120 40 M 120 20 L 120 40 M 140 30 Q 160 10, 180 30" 
@@ -54,12 +54,12 @@ const HeroSection = () => {
           <div className="lg:col-span-1 relative">
             
             {/* Card 1 - Top Left */}
-            <Card className="absolute top-0 left-0 w-80 h-48 bg-gradient-to-br from-blue-500 to-purple-600 border-none text-white overflow-hidden">
+            <Card className="absolute top-0 left-0 w-80 h-48 bg-gradient-to-br from-blue-500 to-purple-600 border-none text-white overflow-hidden transform hover:scale-105 transition-all duration-300 animate-fade-in hover:shadow-2xl">
               <CardContent className="p-0 relative h-full">
                 <img 
                   src="https://binos.themescamp.com/innovation-growth/wp-content/uploads/sites/9/2025/04/hero8-1.webp" 
                   alt="Business Growth" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
@@ -73,12 +73,12 @@ const HeroSection = () => {
             </Card>
             
             {/* Card 2 - Top Right */}
-            <Card className="absolute top-8 right-0 w-72 h-40 bg-white border-none text-black overflow-hidden">
+            <Card className="absolute top-8 right-0 w-72 h-40 bg-white border-none text-black overflow-hidden transform hover:scale-105 transition-all duration-300 animate-fade-in hover:shadow-2xl" style={{ animationDelay: '0.2s' }}>
               <CardContent className="p-0 relative h-full">
                 <img 
                   src="https://binos.themescamp.com/innovation-growth/wp-content/uploads/sites/9/2025/04/hero8-2.webp" 
                   alt="24/7 Availability" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
@@ -97,12 +97,12 @@ const HeroSection = () => {
             </Card>
             
             {/* Card 3 - Bottom Left */}
-            <Card className="absolute bottom-16 left-12 w-64 h-44 bg-gradient-to-br from-purple-600 to-pink-600 border-none text-white overflow-hidden">
+            <Card className="absolute bottom-16 left-12 w-64 h-44 bg-gradient-to-br from-purple-600 to-pink-600 border-none text-white overflow-hidden transform hover:scale-105 transition-all duration-300 animate-fade-in hover:shadow-2xl" style={{ animationDelay: '0.4s' }}>
               <CardContent className="p-0 relative h-full">
                 <img 
                   src="https://binos.themescamp.com/innovation-growth/wp-content/uploads/sites/9/2025/04/hero8-4.webp" 
                   alt="Company Skills" 
-                  className="w-full h-full object-cover opacity-80"
+                  className="w-full h-full object-cover opacity-80 transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent"></div>
                 <div className="absolute top-4 right-4">
@@ -125,12 +125,12 @@ const HeroSection = () => {
             </Card>
             
             {/* Card 4 - Bottom Right */}
-            <Card className="absolute bottom-0 right-8 w-72 h-52 bg-gray-100 border-none text-black overflow-hidden">
+            <Card className="absolute bottom-0 right-8 w-72 h-52 bg-gray-100 border-none text-black overflow-hidden transform hover:scale-105 transition-all duration-300 animate-fade-in hover:shadow-2xl" style={{ animationDelay: '0.6s' }}>
               <CardContent className="p-0 relative h-full">
                 <img 
                   src="https://binos.themescamp.com/innovation-growth/wp-content/uploads/sites/9/2025/04/hero8-3.webp" 
                   alt="Innovation" 
-                  className="w-full h-full object-cover opacity-60"
+                  className="w-full h-full object-cover opacity-60 transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-100/90 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
