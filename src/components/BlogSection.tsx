@@ -16,7 +16,7 @@ const BlogSection = () => {
       <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100" aria-label="Se încarcă articolele din blog">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-800 bg-clip-text text-transparent mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-800 bg-clip-text text-transparent mb-6 leading-tight">
               Ultimele Articole din Blog
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-2.5">
@@ -37,7 +37,7 @@ const BlogSection = () => {
       <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100" aria-label="Eroare la încărcarea articolelor">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-800 bg-clip-text text-transparent mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-800 bg-clip-text text-transparent mb-6 leading-tight">
               Ultimele Articole din Blog
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-2.5">
@@ -64,7 +64,7 @@ const BlogSection = () => {
     <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100" aria-label="Ultimele articole din blog">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-800 bg-clip-text text-transparent mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-800 bg-clip-text text-transparent mb-6 leading-tight">
             Ultimele Articole din Blog
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-2.5">
