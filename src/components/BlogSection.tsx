@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight, Loader2, Clock, ExternalLink } from "lucide-react";
@@ -13,10 +14,10 @@ const BlogSection = () => {
 
   if (isLoading) {
     return (
-      <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-pink-50" aria-label="Se încarcă articolele din blog">
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100" aria-label="Se încarcă articolele din blog">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-orange-700 to-pink-700 bg-clip-text text-transparent mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-800 bg-clip-text text-transparent mb-6">
               Ultimele Articole din Blog
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -24,7 +25,7 @@ const BlogSection = () => {
             </p>
           </div>
           <div className="flex items-center justify-center" role="status" aria-live="polite">
-            <Loader2 className="h-8 w-8 animate-spin mr-2 text-orange-600" aria-hidden="true" />
+            <Loader2 className="h-8 w-8 animate-spin mr-2 text-green-400" aria-hidden="true" />
             <span className="text-lg text-gray-700">Se încarcă articolele...</span>
           </div>
         </div>
@@ -34,10 +35,10 @@ const BlogSection = () => {
 
   if (error || displayArticles.length === 0) {
     return (
-      <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-pink-50" aria-label="Eroare la încărcarea articolelor">
+      <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100" aria-label="Eroare la încărcarea articolelor">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-orange-700 to-pink-700 bg-clip-text text-transparent mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-800 bg-clip-text text-transparent mb-6">
               Ultimele Articole din Blog
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -48,7 +49,7 @@ const BlogSection = () => {
             <div className="bg-white rounded-2xl shadow-lg p-8 max-w-md mx-auto">
               <p className="text-gray-600 mb-4">Nu am putut încărca articolele momentan.</p>
               <Link to="/blog">
-                <Button className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button className="bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-900 hover:to-black text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
                   Vezi Blogul
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -61,10 +62,10 @@ const BlogSection = () => {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-pink-50" aria-label="Ultimele articole din blog">
+    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100" aria-label="Ultimele articole din blog">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-orange-700 to-pink-700 bg-clip-text text-transparent mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-800 bg-clip-text text-transparent mb-6">
             Ultimele Articole din Blog
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -76,12 +77,12 @@ const BlogSection = () => {
           {displayArticles.map((article, index) => (
             <Card 
               key={article.id} 
-              className="group relative bg-white hover:bg-gradient-to-br hover:from-white hover:to-orange-50/50 border-0 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-3 overflow-hidden rounded-2xl"
+              className="group relative bg-white hover:bg-gradient-to-br hover:from-white hover:to-gray-50/50 border-0 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-3 overflow-hidden rounded-2xl"
               style={{
                 animationDelay: `${index * 0.1}s`,
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/5 to-green-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               <a 
                 href={article.link} 
@@ -92,7 +93,7 @@ const BlogSection = () => {
               >
                 <div className="relative p-6">
                   <div className="flex justify-between items-start mb-6">
-                    <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-orange-500 to-pink-500 text-white shadow-lg">
+                    <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg">
                       {article.category}
                     </span>
                     <div className="flex items-center space-x-1 text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
@@ -102,19 +103,19 @@ const BlogSection = () => {
                   </div>
 
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
-                    <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
+                    <div className="w-10 h-10 bg-gradient-to-r from-gray-800 to-green-400 rounded-full flex items-center justify-center shadow-lg">
                       <ExternalLink className="h-5 w-5 text-white" />
                     </div>
                   </div>
                 </div>
 
                 <CardHeader className="px-6 pb-4">
-                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:to-pink-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 line-clamp-2 leading-tight">
+                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-green-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 line-clamp-2 leading-tight">
                     {article.title}
                   </CardTitle>
                   <div className="flex items-center space-x-6 text-sm text-gray-500 mt-3">
                     <div className="flex items-center space-x-2">
-                      <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full flex items-center justify-center">
+                      <div className="w-6 h-6 bg-gradient-to-r from-gray-700 to-green-400 rounded-full flex items-center justify-center">
                         <User className="h-3 w-3 text-white" aria-hidden="true" />
                       </div>
                       <span className="font-medium">{article.author}</span>
@@ -136,21 +137,21 @@ const BlogSection = () => {
                   <div className="flex items-center justify-between">
                     <Button 
                       variant="ghost" 
-                      className="group/btn text-orange-600 hover:text-white hover:bg-gradient-to-r hover:from-orange-500 hover:to-pink-500 p-0 h-auto px-4 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+                      className="group/btn text-gray-800 hover:text-white hover:bg-gradient-to-r hover:from-gray-800 hover:to-green-400 p-0 h-auto px-4 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                       Citește pe ZF.ro
                       <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                     </Button>
                     
                     <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
-                      <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                      <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                      <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse"></div>
+                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                      <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
                     </div>
                   </div>
                 </CardContent>
 
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-800 to-green-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </a>
             </Card>
           ))}
@@ -160,7 +161,7 @@ const BlogSection = () => {
           <Link to="/blog">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-orange-500 via-pink-500 to-orange-600 hover:from-orange-600 hover:via-pink-600 hover:to-orange-700 text-white px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-semibold text-lg"
+              className="bg-gradient-to-r from-gray-800 via-gray-900 to-green-400 hover:from-gray-900 hover:via-black hover:to-green-500 text-white px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-semibold text-lg"
             >
               Vezi Toate Articolele
               <ArrowRight className="ml-3 h-6 w-6" />
