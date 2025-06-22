@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight, Loader2, Clock, ExternalLink } from "lucide-react";
@@ -135,20 +134,20 @@ const BlogSection = () => {
                   </CardDescription>
                   
                   <div className="flex items-center justify-between">
-                    <div className="text-gray-800 hover:text-white group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-green-400 px-4 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center">
+                    <div className="text-blue-600 hover:text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-600 px-4 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center">
                       Citește pe ZF.ro
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
                     
                     <div className="flex space-x-1">
                       <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse"></div>
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                      <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
                       <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
                     </div>
                   </div>
                 </CardContent>
 
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-800 to-green-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </Card>
             </a>
           ))}
