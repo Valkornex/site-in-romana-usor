@@ -110,6 +110,14 @@
       scroll-behavior: auto !important;
     }
   }
+
+  /* Fix pentru titlul secțiunii blog - previne tăierea literelor cu descenders */
+  @media (min-width: 768px) {
+    .md\:text-5xl {
+      font-size: 3rem;
+      line-height: 1.1 !important;
+    }
+  }
 }
 
 /* Utilități pentru optimizarea performanței */
