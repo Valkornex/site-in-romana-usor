@@ -25,7 +25,6 @@ const Contact = () => {
               "url": "https://advicelink.ro/contact",
               "mainEntity": {
                 "@type": "ContactPoint",
-                "telephone": "+40123456789",
                 "email": "noreply@advicelink.ro",
                 "contactType": "customer service",
                 "areaServed": "RO",
