@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight, Loader2, Clock, ExternalLink } from "lucide-react";
@@ -20,7 +19,7 @@ const BlogSection = () => {
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-800 bg-clip-text text-transparent mb-6">
               Ultimele Articole din Blog
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-2.5">
               Rămâi la curent cu cele mai noi știri și tendințe
             </p>
           </div>
@@ -41,7 +40,7 @@ const BlogSection = () => {
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-800 bg-clip-text text-transparent mb-6">
               Ultimele Articole din Blog
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-2.5">
               Rămâi la curent cu cele mai noi știri și tendințe
             </p>
           </div>
@@ -68,7 +67,7 @@ const BlogSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-800 bg-clip-text text-transparent mb-6">
             Ultimele Articole din Blog
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-2.5">
             Rămâi la curent cu cele mai noi știri și tendințe de pe ZF.ro
           </p>
         </div>
