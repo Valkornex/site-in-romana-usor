@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight, Loader2, Clock, ExternalLink } from "lucide-react";
@@ -74,22 +75,22 @@ const BlogSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {displayArticles.map((article, index) => (
-            <Card 
-              key={article.id} 
-              className="group relative bg-white hover:bg-gradient-to-br hover:from-white hover:to-gray-50/50 border-0 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-3 overflow-hidden rounded-2xl"
-              style={{
-                animationDelay: `${index * 0.1}s`,
-              }}
+            <a 
+              key={article.id}
+              href={article.link} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label={`Citește articolul: ${article.title}`}
+              className="block h-full"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-900/5 to-green-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <a 
-                href={article.link} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label={`Citește articolul: ${article.title}`}
-                className="block h-full"
+              <Card 
+                className="group relative bg-white hover:bg-gradient-to-br hover:from-white hover:to-gray-50/50 border-0 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-3 overflow-hidden rounded-2xl h-full"
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                }}
               >
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-900/5 to-green-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
                 <div className="relative p-6">
                   <div className="flex justify-between items-start mb-6">
                     <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg">
@@ -134,13 +135,10 @@ const BlogSection = () => {
                   </CardDescription>
                   
                   <div className="flex items-center justify-between">
-                    <Button 
-                      variant="ghost" 
-                      className="group/btn text-gray-800 hover:text-white hover:bg-gradient-to-r hover:from-gray-800 hover:to-green-400 p-0 h-auto px-4 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
-                    >
+                    <div className="text-gray-800 hover:text-white group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-green-400 px-4 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center">
                       Citește pe ZF.ro
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                    </Button>
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    </div>
                     
                     <div className="flex space-x-1">
                       <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse"></div>
@@ -151,8 +149,8 @@ const BlogSection = () => {
                 </CardContent>
 
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gray-800 to-green-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-              </a>
-            </Card>
+              </Card>
+            </a>
           ))}
         </div>
 
