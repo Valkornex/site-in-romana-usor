@@ -23,21 +23,7 @@ const Footer = () => {
               Echipa noastră de experți te va ghida către succesul dorit.
             </p>
             
-            {/* Contact info integrată în secțiunea logo */}
-            <div className="space-y-3 mb-6">
-              <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 text-blue-400" />
-                <span className="text-gray-400 text-sm">contact@advicelink.ro</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-blue-400" />
-                <span className="text-gray-400 text-sm">+40 123 456 789</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-4 w-4 text-blue-400" />
-                <span className="text-gray-400 text-sm">Str. Principală, Nr. 123, București</span>
-              </div>
-            </div>
+           
 
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
