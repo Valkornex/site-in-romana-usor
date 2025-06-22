@@ -25,7 +25,7 @@ const Contact = () => {
               "url": "https://advicelink.ro/contact",
               "mainEntity": {
                 "@type": "ContactPoint",
-                "email": "noreply@advicelink.ro",
+                "email": "office@advicelink.ro",
                 "contactType": "customer service",
                 "areaServed": "RO",
                 "availableLanguage": "Romanian"
@@ -63,7 +63,7 @@ const Contact = () => {
               Hai să discutăm despre proiectul tău și să vedem cum te putem ajuta să îți atingi obiectivele.
             </p>
             <a 
-              href="mailto:noreply@advicelink.ro" 
+              href="mailto:office@advicelink.ro" 
               className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg text-lg transition-colors duration-200 inline-block"
               aria-label="Trimite email pentru programarea unei consultații gratuite"
             >

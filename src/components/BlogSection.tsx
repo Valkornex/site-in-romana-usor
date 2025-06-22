@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight, Loader2, Clock, ExternalLink } from "lucide-react";
@@ -83,16 +84,16 @@ const BlogSection = () => {
               className="block h-full"
             >
               <Card 
-                className="group relative bg-white hover:bg-gradient-to-br hover:from-white hover:to-gray-50/50 border-0 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-3 overflow-hidden rounded-2xl h-full"
+                className="group relative bg-white hover:bg-gradient-to-br hover:from-white hover:to-purple-50/30 border-0 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-3 overflow-hidden rounded-2xl h-full"
                 style={{
                   animationDelay: `${index * 0.1}s`,
                 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-900/5 to-green-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 <div className="relative p-6">
                   <div className="flex justify-between items-start mb-6">
-                    <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg">
+                    <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-purple-600 to-teal-600 text-white shadow-lg">
                       {article.category}
                     </span>
                     <div className="flex items-center space-x-1 text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
@@ -102,19 +103,19 @@ const BlogSection = () => {
                   </div>
 
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
-                    <div className="w-10 h-10 bg-gradient-to-r from-gray-800 to-green-400 rounded-full flex items-center justify-center shadow-lg">
+                    <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
                       <ExternalLink className="h-5 w-5 text-white" />
                     </div>
                   </div>
                 </div>
 
                 <CardHeader className="px-6 pb-4">
-                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-green-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 line-clamp-2 leading-tight">
+                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-teal-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 line-clamp-2 leading-tight">
                     {article.title}
                   </CardTitle>
                   <div className="flex items-center space-x-6 text-sm text-gray-500 mt-3">
                     <div className="flex items-center space-x-2">
-                      <div className="w-6 h-6 bg-gradient-to-r from-gray-700 to-green-400 rounded-full flex items-center justify-center">
+                      <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-teal-500 rounded-full flex items-center justify-center">
                         <User className="h-3 w-3 text-white" aria-hidden="true" />
                       </div>
                       <span className="font-medium">{article.author}</span>
@@ -134,20 +135,20 @@ const BlogSection = () => {
                   </CardDescription>
                   
                   <div className="flex items-center justify-between">
-                    <div className="text-blue-600 hover:text-white group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-600 px-4 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center">
+                    <div className="text-purple-600 hover:text-white group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-teal-500 px-4 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center">
                       Citește pe ZF.ro
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </div>
                     
                     <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse"></div>
-                      <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                      <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                      <div className="w-2 h-2 bg-teal-400 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
                     </div>
                   </div>
                 </CardContent>
 
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </Card>
             </a>
           ))}
@@ -157,7 +158,7 @@ const BlogSection = () => {
           <Link to="/blog">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-gray-800 via-gray-900 to-green-400 hover:from-gray-900 hover:via-black hover:to-green-500 text-white px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-semibold text-lg"
+              className="bg-gradient-to-r from-purple-600 via-purple-700 to-teal-600 hover:from-purple-700 hover:via-purple-800 hover:to-teal-700 text-white px-10 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-semibold text-lg"
             >
               Vezi Toate Articolele
               <ArrowRight className="ml-3 h-6 w-6" />

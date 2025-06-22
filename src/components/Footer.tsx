@@ -23,7 +23,15 @@ const Footer = () => {
               Echipa noastră de experți te va ghida către succesul dorit.
             </p>
             
-           
+            {/* Informații de contact */}
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center space-x-3">
+                <Mail className="h-5 w-5 text-gray-400" />
+                <a href="mailto:office@advicelink.ro" className="text-gray-400 hover:text-white transition-colors duration-200">
+                  office@advicelink.ro
+                </a>
+              </div>
+            </div>
 
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
@@ -73,7 +81,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Servicii */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Servicii</h3>
             <ul className="space-y-3 text-gray-400">
