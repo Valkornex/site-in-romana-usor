@@ -4,33 +4,6 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 const Contact = () => {
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: "Email",
-      content: "noreply@advicelink.ro",
-      description: "Trimite-ne un email oricând"
-    },
-    {
-      icon: Phone,
-      title: "Telefon",
-      content: "+40 123 456 789",
-      description: "Luni - Vineri, 9:00 - 18:00"
-    },
-    {
-      icon: MapPin,
-      title: "Adresă",
-      content: "București, România",
-      description: "Consultanță la distanță și la sediu"
-    },
-    {
-      icon: Clock,
-      title: "Program",
-      content: "24/7 Online",
-      description: "Răspunsuri rapide la mesaje"
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,29 +14,6 @@ const Contact = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Suntem aici să te ajutăm cu orice întrebări sau nevoi de consultanță. Contactează-ne pentru o discuție inițială gratuită.
           </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {contactInfo.map((info, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
-              <CardHeader>
-                <div className="mx-auto w-16 h-16 bg-gradient-to-br from-blue-600 to-red-600 rounded-full flex items-center justify-center mb-4">
-                  <info.icon className="h-8 w-8 text-white" />
-                </div>
-                <CardTitle className="text-xl font-bold text-gray-900">
-                  {info.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lg font-semibold text-blue-600 mb-2">
-                  {info.content}
-                </p>
-                <CardDescription className="text-gray-600">
-                  {info.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
         </div>
 
         {/* Formularul de contact funcțional */}
