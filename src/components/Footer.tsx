@@ -8,9 +8,9 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo și descriere */}
-          <div className="lg:col-span-1">
+          <div className="md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <img 
                 src="/lovable-uploads/41c2a8a2-886f-48da-8229-f282178575b4.png" 
@@ -18,10 +18,27 @@ const Footer = () => {
                 className="h-8 w-auto"
               />
             </div>
-            <p className="text-gray-400 mb-4 leading-relaxed">
+            <p className="text-gray-400 mb-6 leading-relaxed">
               Oferim soluții profesionale de consultanță pentru a-ți transforma ideile în realitate. 
               Echipa noastră de experți te va ghida către succesul dorit.
             </p>
+            
+            {/* Contact info integrată în secțiunea logo */}
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center space-x-3">
+                <Mail className="h-4 w-4 text-blue-400" />
+                <span className="text-gray-400 text-sm">contact@advicelink.ro</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone className="h-4 w-4 text-blue-400" />
+                <span className="text-gray-400 text-sm">+40 123 456 789</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MapPin className="h-4 w-4 text-blue-400" />
+                <span className="text-gray-400 text-sm">Str. Principală, Nr. 123, București</span>
+              </div>
+            </div>
+
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
                 <Facebook className="h-5 w-5" />
@@ -41,7 +58,7 @@ const Footer = () => {
           {/* Navigare rapidă */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Navigare Rapidă</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               <li>
                 <Link to="/" className="text-gray-400 hover:text-white transition-colors duration-200">
                   Acasă
@@ -73,32 +90,23 @@ const Footer = () => {
           {/* Servicii */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Servicii</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>Strategii de Creștere</li>
-              <li>Consultanță Investiții</li>
-              <li>Marketing & Brand</li>
-              <li>Analiză Financiară</li>
-              <li>Sustenabilitate</li>
+            <ul className="space-y-3 text-gray-400">
+              <li className="hover:text-white transition-colors duration-200 cursor-pointer">
+                Strategii de Creștere
+              </li>
+              <li className="hover:text-white transition-colors duration-200 cursor-pointer">
+                Consultanță Investiții
+              </li>
+              <li className="hover:text-white transition-colors duration-200 cursor-pointer">
+                Marketing & Brand
+              </li>
+              <li className="hover:text-white transition-colors duration-200 cursor-pointer">
+                Analiză Financiară
+              </li>
+              <li className="hover:text-white transition-colors duration-200 cursor-pointer">
+                Sustenabilitate
+              </li>
             </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-blue-400" />
-                <span className="text-gray-400">contact@advicelink.ro</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-blue-400" />
-                <span className="text-gray-400">+40 123 456 789</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-blue-400" />
-                <span className="text-gray-400">Str. Principală, Nr. 123, București</span>
-              </div>
-            </div>
           </div>
         </div>
 
