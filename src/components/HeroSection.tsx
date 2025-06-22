@@ -23,7 +23,7 @@ const HeroSection = () => {
           {/* Left Column - Main Content */}
           <div className="lg:col-span-1 space-y-8 z-10">
             <div className="space-y-6">
-              <h1 className="text-6xl lg:text-8xl font-bold leading-tight text-white animate-fade-in">
+              <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-white animate-fade-in">
                 Innovation for
                 <br />
                 <span className="text-green-400">Positive</span>
@@ -54,11 +54,11 @@ const HeroSection = () => {
           <div className="lg:col-span-1 relative w-full h-full flex items-center justify-center">
             
             {/* Central rotation container */}
-            <div className="relative w-96 h-96">
+            <div className="relative w-[500px] h-[500px]">
               
-              {/* Card 1 - Rotating around center */}
+              {/* Card 1 - Top position (0 degrees) */}
               <div className="absolute inset-0 animate-[spin_20s_linear_infinite]">
-                <div className="absolute -top-24 left-8 animate-[spin_20s_linear_infinite_reverse]">
+                <div className="absolute -top-32 left-1/2 transform -translate-x-1/2 animate-[spin_20s_linear_infinite_reverse]">
                   <Card className="w-80 h-48 bg-gradient-to-br from-blue-500 to-purple-600 border-none text-white overflow-hidden transform hover:scale-105 transition-all duration-300 animate-fade-in hover:shadow-2xl">
                     <CardContent className="p-0 relative h-full">
                       <img 
@@ -79,9 +79,9 @@ const HeroSection = () => {
                 </div>
               </div>
               
-              {/* Card 2 - Rotating around center with delay */}
-              <div className="absolute inset-0 animate-[spin_25s_linear_infinite]" style={{ animationDelay: '0.2s' }}>
-                <div className="absolute -top-4 -right-16 animate-[spin_25s_linear_infinite_reverse]" style={{ animationDelay: '0.2s' }}>
+              {/* Card 2 - Right position (90 degrees offset) */}
+              <div className="absolute inset-0 animate-[spin_25s_linear_infinite]" style={{ animationDelay: '0s' }}>
+                <div className="absolute top-1/2 -right-24 transform -translate-y-1/2 animate-[spin_25s_linear_infinite_reverse]" style={{ animationDelay: '0s' }}>
                   <Card className="w-72 h-40 bg-white border-none text-black overflow-hidden transform hover:scale-105 transition-all duration-300 animate-fade-in hover:shadow-2xl">
                     <CardContent className="p-0 relative h-full">
                       <img 
@@ -107,9 +107,9 @@ const HeroSection = () => {
                 </div>
               </div>
               
-              {/* Card 3 - Rotating around center with delay */}
-              <div className="absolute inset-0 animate-[spin_30s_linear_infinite]" style={{ animationDelay: '0.4s' }}>
-                <div className="absolute bottom-16 -left-8 animate-[spin_30s_linear_infinite_reverse]" style={{ animationDelay: '0.4s' }}>
+              {/* Card 3 - Bottom position (180 degrees offset) */}
+              <div className="absolute inset-0 animate-[spin_30s_linear_infinite]" style={{ animationDelay: '0s' }}>
+                <div className="absolute -bottom-32 left-1/2 transform -translate-x-1/2 animate-[spin_30s_linear_infinite_reverse]" style={{ animationDelay: '0s' }}>
                   <Card className="w-64 h-44 bg-gradient-to-br from-purple-600 to-pink-600 border-none text-white overflow-hidden transform hover:scale-105 transition-all duration-300 animate-fade-in hover:shadow-2xl">
                     <CardContent className="p-0 relative h-full">
                       <img 
@@ -139,9 +139,9 @@ const HeroSection = () => {
                 </div>
               </div>
               
-              {/* Card 4 - Rotating around center with delay */}
-              <div className="absolute inset-0 animate-[spin_18s_linear_infinite]" style={{ animationDelay: '0.6s' }}>
-                <div className="absolute bottom-0 right-8 animate-[spin_18s_linear_infinite_reverse]" style={{ animationDelay: '0.6s' }}>
+              {/* Card 4 - Left position (270 degrees offset) */}
+              <div className="absolute inset-0 animate-[spin_18s_linear_infinite]" style={{ animationDelay: '0s' }}>
+                <div className="absolute top-1/2 -left-24 transform -translate-y-1/2 animate-[spin_18s_linear_infinite_reverse]" style={{ animationDelay: '0s' }}>
                   <Card className="w-72 h-52 bg-gray-100 border-none text-black overflow-hidden transform hover:scale-105 transition-all duration-300 animate-fade-in hover:shadow-2xl">
                     <CardContent className="p-0 relative h-full">
                       <img 
