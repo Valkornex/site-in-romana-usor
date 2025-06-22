@@ -3,33 +3,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
-const Contact = () => {
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: "Email",
-      content: "noreply@advicelink.ro",
-      description: "Trimite-ne un email și îți vom răspunde în cel mai scurt timp"
-    },
-    {
-      icon: Phone,
-      title: "Telefon",
-      content: "+40 123 456 789",
-      description: "Suntem disponibili în program de lucru"
-    },
-    {
-      icon: MapPin,
-      title: "Adresă",
-      content: "Str. Principală, Nr. 123, București",
-      description: "Vizitează-ne la sediul nostru pentru o consultație față în față"
-    },
-    {
-      icon: Clock,
-      title: "Program",
-      content: "Luni - Vineri: 9:00 - 18:00",
-      description: "Disponibili pentru programări și consultații"
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-white py-16">
