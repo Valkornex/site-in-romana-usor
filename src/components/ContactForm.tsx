@@ -78,7 +78,7 @@ const ContactForm = ({
     }
   };
 
-  const isFormValid = formData.name && formData.email && formData.message;
+  const isFormValid = Boolean(formData.name && formData.email && formData.message);
 
   return (
     <Card className="w-full max-w-2xl mx-auto">
