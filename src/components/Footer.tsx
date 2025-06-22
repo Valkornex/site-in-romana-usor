@@ -82,25 +82,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-blue-400" />
-                <span className="text-gray-400">contact@advicelink.ro</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-blue-400" />
-                <span className="text-gray-400">+40 123 456 789</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-blue-400" />
-                <span className="text-gray-400">Str. Principală, Nr. 123, București</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        
 
         {/* Separator */}
         <div className="border-t border-gray-800 mt-8 pt-8">
